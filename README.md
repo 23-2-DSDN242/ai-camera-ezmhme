@@ -1,8 +1,7 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/ex6pWDJu)
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=15089931&assignment_repo_type=AssignmentRepo)
 ## Creative Coding 2: Custom Pixel
-
-The images above are photos of Wellington CBD algorithmically processed with a lightly modified version of the [p5.js Pointillism example](https://p5js.org/examples/image-pointillism.html). The masks for each photo highlight various objects. Replace this text with your own which explains the source of your photos, masking, and applied algorithm.
+### Emerson Hemingway
 
 For this project I began by looking at the class examples and brainstorming what subject matter I may be interested in focusing on for this assignment. At first I was interested in focusing on plants but upon further brainstorming I landed on the idea of focusing on eyes and having my filter warp this in some way.
 
@@ -11,12 +10,12 @@ With my theming of eyes I want my assignment to portray a twist on "the eyes are
 After deciding on this theme I began sourcing some test images to start training the AI to begin to recognise this subject.
 
 First training images and masks:
-![alt text](input_1-1.jpg)
-![alt text](mask_1-1.png)
-![alt text](input_2-1.jpg)
-![alt text](mask_2-1.png)
-![alt text](input_3-1.jpg)
-![alt text](mask_3-1.png)
+![alt text](input_1.jpg)
+![alt text](mask_1.png)
+![alt text](input_2.jpg)
+![alt text](mask_2.png)
+![alt text](input_3.jpg)
+![alt text](mask_3.png)
 
 After processing these images with my input new:
 ![alt text](input_new.jpg)
@@ -29,14 +28,14 @@ This showed me that I needed to provide more training images to have the system 
 I repeated this process and the output was much more accurate than my first attempt.
 
 Second lot of training images and masks:
-![alt text](input_4-1.jpg)
-![alt text](mask_4-1.png)
-![alt text](input_5-1.jpg)
-![alt text](mask_5-1.png)
-![alt text](input_6-1.jpg)
-![alt text](mask_6-1.png)
-![alt text](input_7-1.jpg)
-![alt text](mask_7-1.png)
+![alt text](input_4.jpg)
+![alt text](mask_4.png)
+![alt text](input_5.jpg)
+![alt text](mask_5.png)
+![alt text](input_6.jpg)
+![alt text](mask_6.png)
+![alt text](input_7.jpg)
+![alt text](mask_7.png)
 
 The new mask outputs for my new input images were much more accurate and recgonised my subject matter efficiently.
 
@@ -47,6 +46,16 @@ I began with a basic wavy effect on my subject.
 
 After this I played around with the code a bit more and created this effect:
 ![alt text](<preview (16).jpg>)
+
+After viewing both of these results I decided to pursue the [p5.js wavy example](https://github.com/23-2-DSDN242/mddn-242-data-mapping-dribnet/blob/8102140af8a1de2b7ac0ee6fc219f80a70329b7f/sketch.js) for my pixel treatment. I like the way this treatment supports my projec theming with a distortion effect.
+
+Final Images:
+![alt text](output_1.png)
+![alt text](output_2.png)
+![alt text](output_3.png)
+![alt text](output_4.png)
+![alt text](output_5.png)
+![alt text](output_6.png)
 
 Images sourced from pexels:
 https://www.pexels.com/photo/photography-of-a-guy-wearing-green-shirt-1222271/
