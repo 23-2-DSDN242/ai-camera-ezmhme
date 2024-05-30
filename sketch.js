@@ -1,11 +1,9 @@
 let sourceImg=null;
 let maskImg=null;
-let renderCounter=0;
 
-// change these three lines as appropiate
-let sourceFile = "input_1.jpg";
-let maskFile   = "mask_1.png";
-let outputFile = "output_1.png";
+let sourceFile = "input_2.jpg";
+let maskFile   = "mask_2.png";
+let outputFile = "output_6.png"; // Image and mask data for filter rendering
 
 function preload() {
   sourceImg = loadImage(sourceFile);
@@ -18,29 +16,48 @@ function setup () {
 
   imageMode(CENTER);
   noStroke();
-  background(255, 0, 0);
+  background(0, 0, 128);
   sourceImg.loadPixels();
   maskImg.loadPixels();
+  colorMode(HSB);
 }
 
+let X_STOP = 1920;
+let Y_STOP = 1080;
+let OFFSET = 25; // Wave intensity
+
+let renderCounter=0;
 function draw () {
-  for(let i=0;i<4000;i++) {
-    let x = floor(random(sourceImg.width));
-    let y = floor(random(sourceImg.height));
-    let pix = sourceImg.get(x, y);
-    let mask = maskImg.get(x, y);
-    fill(pix);
-    if(mask[0] > 128) {
-      let pointSize = 10;
-      ellipse(x, y, pointSize, pointSize);
-    }
-    else {
-      let pointSize = 20;
-      rect(x, y, pointSize, pointSize);    
+  angleMode(DEGREES);
+  let num_lines_to_draw = 40;
+  // get one scanline
+  for(let j=renderCounter; j<renderCounter+num_lines_to_draw && j<Y_STOP; j++) {
+    for(let i=0; i<X_STOP; i++) {
+      colorMode(RGB);
+      let mask = maskImg.get(i, j);
+      if (mask[1] < 128) {
+        pix = sourceImg.get(i, j);
+      }
+      else {
+        let wave = sin(j*8);
+        let slip = map(wave, -1, 1, -OFFSET, OFFSET);
+        pix = sourceImg.get(i+slip, j); // Wave filter effect
+
+        // let brt = map(wave, -1, 1, 0, 255);
+        // for(let c=0; c<3; c++) {
+        //   pix[c] = brt;
+        // } // Removes masked section of image
+
+      }
+
+      set(i, j, pix);
     }
   }
-  renderCounter = renderCounter + 1;
-  if(renderCounter > 10) {
+  renderCounter = renderCounter + num_lines_to_draw;
+  updatePixels();
+
+  // print(renderCounter);
+  if(renderCounter > Y_STOP) {
     console.log("Done!")
     noLoop();
     // uncomment this to save the result
