@@ -2,8 +2,8 @@ let sourceImg=null;
 let maskImg=null;
 
 // change these three lines as appropiate
-let sourceFile = "input_new2.jpg";
-let maskFile   = "mask_new2.png";
+let sourceFile = "input_2.jpg";
+let maskFile   = "mask_2.png";
 let outputFile = "output_6.png";
 
 function preload() {
