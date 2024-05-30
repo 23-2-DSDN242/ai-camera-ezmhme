@@ -1,10 +1,9 @@
 let sourceImg=null;
 let maskImg=null;
 
-// change these three lines as appropiate
 let sourceFile = "input_2.jpg";
 let maskFile   = "mask_2.png";
-let outputFile = "output_6.png";
+let outputFile = "output_6.png"; // Image and mask data for filter rendering
 
 function preload() {
   sourceImg = loadImage(sourceFile);
@@ -23,11 +22,9 @@ function setup () {
   colorMode(HSB);
 }
 
-// let X_STOP = 640;
-// let Y_STOP = 480;
 let X_STOP = 1920;
 let Y_STOP = 1080;
-let OFFSET = 25;
+let OFFSET = 25; // Wave intensity
 
 let renderCounter=0;
 function draw () {
@@ -44,12 +41,12 @@ function draw () {
       else {
         let wave = sin(j*8);
         let slip = map(wave, -1, 1, -OFFSET, OFFSET);
-        pix = sourceImg.get(i+slip, j);
+        pix = sourceImg.get(i+slip, j); // Wave filter effect
 
         // let brt = map(wave, -1, 1, 0, 255);
         // for(let c=0; c<3; c++) {
         //   pix[c] = brt;
-        // } // removes masked image
+        // } // Removes masked section of image
 
       }
 
