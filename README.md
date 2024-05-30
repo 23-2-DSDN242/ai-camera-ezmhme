@@ -39,6 +39,18 @@ Second lot of training images and masks:
 
 The new mask outputs for my new input images were much more accurate and recgonised my subject matter efficiently.
 
+New input images and their generated masks:
+![alt text](input_new1.jpg)
+![alt text](mask_new1.png)
+![alt text](input_new2.jpg) 
+![alt text](mask_new2.png)
+![alt text](input_new3.jpg)
+![alt text](mask_new3.png)
+![alt text](input_new4.jpg)
+![alt text](mask_new4.png)
+![alt text](input_new5.jpg) 
+![alt text](mask_new5.png)
+
 Once I processed my images through the system I began looking at how I want my filter to edit my subject matter.
 
 I began with a basic wavy effect on my subject.
