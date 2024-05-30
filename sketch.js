@@ -2,9 +2,9 @@ let sourceImg=null;
 let maskImg=null;
 
 // change these three lines as appropiate
-let sourceFile = "input_2.jpg";
-let maskFile   = "mask_2.png";
-let outputFile = "output_1.png";
+let sourceFile = "input_new2.jpg";
+let maskFile   = "mask_new2.png";
+let outputFile = "output_6.png";
 
 function preload() {
   sourceImg = loadImage(sourceFile);
@@ -27,7 +27,7 @@ function setup () {
 // let Y_STOP = 480;
 let X_STOP = 1920;
 let Y_STOP = 1080;
-let OFFSET = 20;
+let OFFSET = 25;
 
 let renderCounter=0;
 function draw () {
@@ -49,7 +49,8 @@ function draw () {
         // let brt = map(wave, -1, 1, 0, 255);
         // for(let c=0; c<3; c++) {
         //   pix[c] = brt;
-        // }
+        // } // removes masked image
+
       }
 
       set(i, j, pix);
